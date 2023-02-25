@@ -1,0 +1,9 @@
+.nav-focus {
+    color: #057b00;
+    font-size: 17.4px;
+    text-decoration: underline;
+}
+
+.nav-focus:hover {
+    color: #057b00 !important;
+}

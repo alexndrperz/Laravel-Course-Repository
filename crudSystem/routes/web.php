@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('Companies');
+})->name('stores');
+
+Route::get('/managers_view', function() {
+    return view('Managers');
+})->name('managers');
