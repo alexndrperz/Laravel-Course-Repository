@@ -4,7 +4,7 @@ aprendido hasta ahora en Laravel 9
  
 --- Explicacion de commit ---
 Este commit del proyecto pone en evidencia todo lo aprendido
-en la leccion 1-2 del curso "Laravel 9 Fundamentals" de Mateo Prigl
+en la leccion 1-3 del curso "Laravel 9 Fundamentals" de Mateo Prigl
 en Pluralsight, entre estos temas se encuentran:
 
 1. Uso de yield, extends, y section para crear  template que sea reutilizable para
