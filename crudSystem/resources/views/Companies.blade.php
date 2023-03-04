@@ -1,5 +1,4 @@
 @extends('Layout')
-
 @section('title','Negocios')
 @section('header','Negocios')
 @section('hd-table')
@@ -12,4 +11,3 @@
         <th>Encargados</th>
     </tr>
 @endsection
-
