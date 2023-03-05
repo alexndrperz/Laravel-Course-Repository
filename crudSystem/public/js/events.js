@@ -1,30 +1,67 @@
-var navFocus = document.getElementsByClassName('nav-focus');
-console.log(navFocus);
+var navFocus = document.getElementsByClassName('nav-focus')[0].innerText;
+
 
 function CompaniesModal() {
     
     var checkbox = document.getElementById('checkbox');
-    var idInput = document.getElementById('div-id-input').style;
-    var nameInput = document.getElementById('div-name-input').style;
-    var locationInput = document.getElementById('div-location-input').style;
+    var idInput = document.getElementById('div-input-id').style;
+    var nameInput = document.getElementById('div-input-name').style;
     
     checkbox.addEventListener('change', function() {
         if (this.checked) {
             idInput.display = 'block';
-            locationInput.width = '100%';
             nameInput.width = '75%';
-            console.log("{{managers}}");
     
         }
         else {
             idInput.display = 'none';
-            locationInput.width = '50%';
-            nameInput.width = '50%'
+            nameInput.width = '100%';
         }
     })  
 }
 
-CompaniesModal()
+function ManagersModal() {
+    var rows = document.getElementsByClassName('row')[0];
+    var checkbox = document.getElementById('checkbox');
+    var idInput = document.getElementById('div-input-id').style;
+    var nameInput = document.getElementById('div-input-name');  
+    var firstRow = document.getElementsByClassName('row')[0];
+    
+    rows.children[1].className = "col-6";
+    var thirdColumn = document.createElement("div");
+    thirdColumn.className = "col-6";
+    thirdColumn.innerHTML = "<div class=\"mb-3\"><label for=\"\" class=\"form-label\">Apellido</label><input type=\"text\" class=\"form-control\" id=\"input-name\" aria-describedby=\"emailHelp\"></div>";
+    rows.appendChild(thirdColumn);
+    var container = document.getElementsByClassName("text-center");
+    var firstColumn = document.createElement("div");
+    firstColumn.id = "firstRow";
+
+    checkbox.addEventListener('change', function() {
+        
+        if (this.checked) {
+            
+            firstColumn.className = "row";
+            firstColumn.appendChild(document.createElement("div"));
+            firstColumn.children[0].className = "col-4";
+
+            firstColumn.children[0].style.margin = "auto";
+            firstColumn.children[0].innerHTML = "<div class=\"mb-1\"><label for=\"exampleInputEmail1\" class=\"form-label\">ID</label><input type=\"text\" class=\"form-control\" id=\"input-name\" aria-describedby=\"emailHelp\"></div>";
+
+            container[0].insertAdjacentElement("afterbegin", firstColumn)
+        }
+        else {
+            var row = document.getElementById("firstRow")
+            container[0].removeChild(row);
+        }
+    })  
+}
+
+if (navFocus == "Negocios") {
+    CompaniesModal()
+} else {
+    ManagersModal()
+}
+
 
 
 
