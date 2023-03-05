@@ -1,3 +1,8 @@
+
+@php
+ $o = 22    
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -29,10 +34,10 @@
                     <a class="navbar-brand" href="#">Consorcio Dominguez</a>
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link {{request()->routeIs('stores') ? 'nav-focus' : ''}}" aria-current="page" href="{{route('stores')}}">Negocios</a>
+                            <a class="nav-link {{request()->routeIs('stores') ? 'nav-focus' : ''}}" aria-current="page" href="{{route('stores')}}" id="Bussines-view">Negocios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{request()->routeIs('managers') ? 'nav-focus' : ''}}" href="{{route('managers')}}">Encargados</a>
+                            <a class="nav-link {{request()->routeIs('managers') ? 'nav-focus' : ''}}" href="{{route('managers')}}" id="Managers -view">Encargados</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
@@ -57,7 +62,11 @@
                     @yield('bd-table')
                 </tbody>
             </table>
+            <hr>
+            @include('Sections/Modal')
         </main>
+
+        <script src="{{asset('js/events.js')}}"></script>
 
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
