@@ -23,9 +23,6 @@ function CompaniesModal() {
 function ManagersModal() {
     var rows = document.getElementsByClassName('row')[0];
     var checkbox = document.getElementById('checkbox');
-    var idInput = document.getElementById('div-input-id').style;
-    var nameInput = document.getElementById('div-input-name');  
-    var firstRow = document.getElementsByClassName('row')[0];
     
     rows.children[1].className = "col-6";
     var thirdColumn = document.createElement("div");
