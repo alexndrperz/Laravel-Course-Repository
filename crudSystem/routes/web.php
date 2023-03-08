@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,13 @@ Route::get('/', function () {
 Route::get('/managers_view', function() {
     return view('Managers');
 })->name('managers');
+
+Route::post('/posts', function(Request $request){
+    $id = $request->input('id');
+    $name = $request->input('nombre');
+    $phone = $request->input('telefono');
+    $location = $request->input('location');
+    $email = $request->input('email');
+    $result = $id."//".$name."//".$phone."//".$email."//".$location;
+    return redirect()->back()->with('success',$result);
+})->name('post.stored');

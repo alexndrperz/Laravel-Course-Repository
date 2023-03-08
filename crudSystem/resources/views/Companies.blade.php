@@ -11,3 +11,14 @@
         <th>Encargados</th>
     </tr>
 @endsection
+@section('bd-table')
+    @if (session('success'))
+    @php
+     $aos = session('success')   
+    @endphp
+     
+        @foreach (explode('//',$aos) as $row)
+            <td>{{$row}}</td>
+        @endforeach
+    @endif
+@endsection

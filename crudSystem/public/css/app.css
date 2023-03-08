@@ -7,3 +7,7 @@
 .nav-focus:hover {
     color: #057b00 !important;
 }
+
+.input {
+    text-align: center;
+}

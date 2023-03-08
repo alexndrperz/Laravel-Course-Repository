@@ -58,6 +58,7 @@
                 </tbody>
             </table>
             <hr style="margin-top:50px;">
+            
             @include('Sections/Modal')
         </main>
 
