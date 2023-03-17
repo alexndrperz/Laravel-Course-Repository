@@ -48,7 +48,14 @@
         <main class="container-sm" style="margin-top:20px;">
             <h1>Crud System (@yield('header'))</h1>
             <hr>
-
+            @if ($errors->any())
+            <div class="alert alert-danger" role="alert" style="padding-bottom:5px">
+                @foreach ($errors->all() as $error)
+                    <p>{{$errors}}</p>       
+                @endforeach
+            </div>
+                
+            @endif
             <table class="table table-hover" style="border:2px solid; ">
                 <thead>
                     @yield('hd-table')

@@ -23,11 +23,17 @@ Route::get('/managers_view', function() {
 })->name('managers');
 
 Route::post('/posts', function(Request $request){
+    $request->validate([
+        'nombre'=>'required',
+        'id' => 'required',
+    ]);
+    $messages = ["nombre.required" => "asdasdasd"];
+
     $id = $request->input('id');
     $name = $request->input('nombre');
     $phone = $request->input('telefono');
     $location = $request->input('location');
     $email = $request->input('email');
     $result = $id."//".$name."//".$phone."//".$email."//".$location;
-    return redirect()->back()->with('success',$result);
+    return redirect()->back()->with('success',$result,$messages);
 })->name('post.stored');

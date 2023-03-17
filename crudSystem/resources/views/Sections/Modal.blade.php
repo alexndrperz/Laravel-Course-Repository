@@ -2,7 +2,6 @@
 <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Añadir
 </button>
-  
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -12,15 +11,14 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            
-            <form action="{{route('post.stored')}}" method="POST">
+            <form action="{{route('post.stored')}}" method="POST" id="modal-form">
                 @csrf
                 <div class="container text-center">
                     <div class="row">
                         <div class="col-4" id="div-input-id" style="display: none;" >
                             <div class="mb-3" >
                                 <label for="exampleInputEmail1" class="form-label"  >ID</label>
-                                <input type="text" class="form-control input" id="input-name" aria-describedby="emailHelp" onkeyup="mayus(this);" maxlength="6" name="id">
+                                <input type="text" class="form-control input" id="input-id" aria-describedby="emailHelp" onkeyup="mayus(this);" maxlength="6" name="id">
                               </div>
                         </div>
                         <div class="col-12" id="div-input-name">

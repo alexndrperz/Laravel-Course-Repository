@@ -2,40 +2,50 @@ var navFocus = document.getElementsByClassName('nav-focus')[0].innerText;
 
 const  generateRandomString = (num) => {
     const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    let result1= ' ';
+    let result1= '';
     const charactersLength = characters.length;
     for ( let i = 0; i < num; i++ ) {
         result1 += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
-
-    let td_s = document.getElementsByClassName('id-s');
-    td_s.forEach(row => {
-        console.log(row.innerText)
-    }); 
-
     return result1;
 }
 
-const displayRandomString = () =>{
-   let randomStringContainer = document.getElementById('random_string'); 
-    randomStringContainer.innerHTML =  generateRandomString(8);    
+function tds(clase) {
+    let td_s = document.getElementsByClassName(clase);
+    for (let index = 0; index < td_s.length; index++) {
+        result = '';
+        idclav = generateRandomString(6)
+        if (td_s[index].innerText != idclav){
+            result = idclav
+            return result;
+        }; 
+    } 
 }
 
+
+
+
+
 function CompaniesModal() {
+    let clave = tds('id-s');
+    console.log(clave);
     
     var checkbox = document.getElementById('checkbox');
     var idInput = document.getElementById('div-input-id');
-    var nameInput = document.getElementById('div-input-name').style;
+    var nameInput = document.getElementById('div-input-name');
+    let inputID = document.getElementById('input-id');
+    inputID.setAttribute('value',clave);
     
     checkbox.addEventListener('change', function() {
         if (this.checked) {
-            idInput.display = 'block';
-            nameInput.width = '65.7%';
-    
+            idInput.style.display = 'block';
+            nameInput.style.width = '65.7%';
+            inputID.setAttribute('value','');
         }
         else {
-            idInput.display = 'none';
-            nameInput.styles.width = '100%';
+            idInput.style.display = 'none';
+            nameInput.style.width = '100%';
+            inputID.setAttribute('value',clave);
         }
     })  
 }
