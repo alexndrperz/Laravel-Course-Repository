@@ -24,11 +24,9 @@
 <tr>
     @if (session('success'))
     @php
-     $aos = session('success')   
+     $data = session('success')   
     @endphp
-     
-        @foreach (explode('//',$aos) as $row)
-            
+        @foreach (explode('//',$data) as $row)
             <td>{{$row}}</td>
         @endforeach
         <td><a href="#"><button class="btn btn-outline-primary" style="padding:2px 14px;">Ver</button></a></td>

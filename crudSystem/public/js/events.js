@@ -35,6 +35,9 @@ function CompaniesModal() {
     var nameInput = document.getElementById('div-input-name');
     let inputID = document.getElementById('input-id');
     inputID.setAttribute('value',clave);
+
+
+
     
     checkbox.addEventListener('change', function() {
         if (this.checked) {
@@ -57,11 +60,20 @@ function ManagersModal() {
     rows.children[1].className = "col-6";
     var thirdColumn = document.createElement("div");
     thirdColumn.className = "col-6";
-    thirdColumn.innerHTML = "<div class=\"mb-3\"><label for=\"\" class=\"form-label\">Apellido</label><input type=\"text\" class=\"form-control input\" id=\"input-name\" aria-describedby=\"emailHelp\"></div>";
+    thirdColumn.innerHTML = "<div class=\"mb-3\"><label for=\"\" class=\"form-label\">Apellido</label><input type=\"text\" class=\"form-control input\" id=\"input-name\" aria-describedby=\"emailHelp\" name=\"lastName_managers\"></div>";
     rows.appendChild(thirdColumn);
     var container = document.getElementsByClassName("text-center");
     var firstColumn = document.createElement("div");
     firstColumn.id = "firstRow";
+
+    let array = document.getElementsByClassName("input");
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index].getAttribute("name");
+        const result = element.replace("companie","managers")
+        document.getElementsByClassName("input")[index].setAttribute("name",result)
+        console.log(element);
+    }
+
 
     checkbox.addEventListener('change', function() {
         

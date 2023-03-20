@@ -53,14 +53,7 @@
         <main class="container-sm" style="margin-top:20px;">
             <h1>Crud System (@yield('header'))</h1>
             <hr>
-            @if ($errors->any())
-            <div class="alert alert-danger" role="alert" style="padding-bottom:5px">
-                @foreach ($errors->all() as $error)
-                    <p>{{$errors}}</p>       
-                @endforeach
-            </div>
-                
-            @endif
+             @includeWhen($errors->any(), 'Subviews/_error')
             <table class="table table-hover" style="border:2px solid; ">
                 <thead>
                     @yield('hd-table')
@@ -70,8 +63,7 @@
                 </tbody>
             </table>
             <hr style="margin-top:50px;">
-            
-            @include('Sections/Modal')
+            @include('Subviews/_modal')
         </main>
 
         <script src="{{asset("js/events.js")}}"></script>
