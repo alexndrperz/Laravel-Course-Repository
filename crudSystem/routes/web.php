@@ -16,11 +16,11 @@ use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('Companies');
-})->name('stores');
+})->name('get.companies');
 
 Route::get('/managers_view', function() {
     return view('Managers');
-})->name('managers');
+})->name('get.managers');
 
 Route::post('/posts/companies', function(Request $request){
     $request->validate([

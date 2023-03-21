@@ -60,7 +60,8 @@ function ManagersModal() {
     rows.children[1].className = "col-6";
     var thirdColumn = document.createElement("div");
     thirdColumn.className = "col-6";
-    thirdColumn.innerHTML = "<div class=\"mb-3\"><label for=\"\" class=\"form-label\">Apellido</label><input type=\"text\" class=\"form-control input\" id=\"input-name\" aria-describedby=\"emailHelp\" name=\"lastName_managers\"></div>";
+    
+    thirdColumn.appendChild(document.getElementById('manager-lastname'));
     rows.appendChild(thirdColumn);
     var container = document.getElementsByClassName("text-center");
     var firstColumn = document.createElement("div");
@@ -71,8 +72,10 @@ function ManagersModal() {
     firstColumn.children[0].className = "col-4";
 
     firstColumn.children[0].style.margin = "auto";
-    firstColumn.children[0].innerHTML = "<div class=\"mb-1\"><label for=\"exampleInputEmail1\" class=\"form-label\">ID</label><input type=\"text\" class=\"form-control input\" id=\"input-manager-id\" aria-describedby=\"emailHelp\" onkeyup=\"mayus(this);\" maxlength=\"6\" name=\"id_managers\" styles=\"display:none;\"></div>";
-    container[0].insertAdjacentElement("afterbegin", firstColumn)
+    firstColumn.children[0].innerHTML = "<div class=\"mb-1\" id=\"div-input-id-managers\" style=\"display:none;\"><label for=\"exampleInputEmail1\" class=\"form-label\">ID</label><input type=\"text\" class=\"form-control input\" id=\"input-manager-id\" aria-describedby=\"emailHelp\" onkeyup=\"mayus(this);\" maxlength=\"6\" name=\"id_managers\"></div>";
+    container[0].insertAdjacentElement("afterbegin", firstColumn);
+    document.getElementById('manager-lastname').style.display ="block";
+    
 
     let array = document.getElementsByClassName("input");
     for (let index = 0; index < array.length; index++) {
@@ -81,20 +84,19 @@ function ManagersModal() {
         document.getElementsByClassName("input")[index].setAttribute("name",result)
         console.log(element);
     }
-
-
+    document.getElementById('input-manager-id').setAttribute('value',clave);
+    var clave = tds('id-s-managers');
+    document.getElementById('input-manager-id').setAttribute('value',clave);
     checkbox.addEventListener('change', function() {
         
         if (this.checked) {
             
-            document.getElementById('input-manager-id').style.display = "block";
+            document.getElementById('div-input-id-managers').style.display = "block";
             document.getElementById('input-manager-id').setAttribute('value','');
         }
         else {
-            document.getElementById('input-manager-id').style.display = "none";
-            var row = document.getElementById("firstRow")
-            container[0].removeChild(row);
-            document.getElementById('input-manager-id').setAttribute('value',tds('id-s-managers'));
+            document.getElementById('div-input-id-managers').style.display = "none";
+            document.getElementById('input-manager-id').setAttribute('value',clave);
         }
     })  
     

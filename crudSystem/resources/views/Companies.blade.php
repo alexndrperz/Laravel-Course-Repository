@@ -16,7 +16,7 @@
     <td class="id-s">3DFWF3</td>
     <td>Peaky Blinders Factory</td>
     <td>809-555-5444</td>
-    <td>vivaeldinero@gmail.com</td>
+    <td>vivaelamor@gmail.com</td>
     <td>C/ La vida es solo una  #43</td>
     <td><a href="#"><button class="btn btn-outline-primary" style="padding:2px 14px;">Ver</button></a></td>
 </tr>

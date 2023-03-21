@@ -10,7 +10,7 @@
         <th>Telefono</th>
         <th>Correo</th>
         <th>Ubicacion</th>
-        @if (request()->routeIs('managers'))
+        @if (request()->routeIs('get.managers'))
             <th>Empresa</th>
         @endif
 
@@ -18,7 +18,7 @@
 @endsection
 @section('bd-table')
 <tr>
-    <td class="id-s">3D2233</td>
+    <td class="id-s-managers">3D2233</td>
     <td>Alan Alexander</td>
     <td>Perez</td>
     <td>809-333-3323</td>
