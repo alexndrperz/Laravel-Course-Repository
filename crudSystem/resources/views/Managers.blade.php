@@ -18,7 +18,7 @@
 @endsection
 @section('bd-table')
 <tr>
-    <td class="id-s">3D3</td>
+    <td class="id-s">3D2233</td>
     <td>Alan Alexander</td>
     <td>Perez</td>
     <td>809-333-3323</td>
@@ -30,7 +30,7 @@
 <tr>
     @if (session('success'))
     @php
-     $data = session('success')   
+     $data = session('success');
     @endphp
         @foreach (explode('//',$data) as $row)
             <td>{{$row}}</td>

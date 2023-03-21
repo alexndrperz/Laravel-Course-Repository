@@ -65,6 +65,14 @@ function ManagersModal() {
     var container = document.getElementsByClassName("text-center");
     var firstColumn = document.createElement("div");
     firstColumn.id = "firstRow";
+    document.getElementById('div-input-id').remove();
+    firstColumn.className = "row";
+    firstColumn.appendChild(document.createElement("div"));
+    firstColumn.children[0].className = "col-4";
+
+    firstColumn.children[0].style.margin = "auto";
+    firstColumn.children[0].innerHTML = "<div class=\"mb-1\"><label for=\"exampleInputEmail1\" class=\"form-label\">ID</label><input type=\"text\" class=\"form-control input\" id=\"input-manager-id\" aria-describedby=\"emailHelp\" onkeyup=\"mayus(this);\" maxlength=\"6\" name=\"id_managers\" styles=\"display:none;\"></div>";
+    container[0].insertAdjacentElement("afterbegin", firstColumn)
 
     let array = document.getElementsByClassName("input");
     for (let index = 0; index < array.length; index++) {
@@ -79,17 +87,14 @@ function ManagersModal() {
         
         if (this.checked) {
             
-            firstColumn.className = "row";
-            firstColumn.appendChild(document.createElement("div"));
-            firstColumn.children[0].className = "col-4";
-
-            firstColumn.children[0].style.margin = "auto";
-            firstColumn.children[0].innerHTML = "<div class=\"mb-1\"><label for=\"exampleInputEmail1\" class=\"form-label\">ID</label><input type=\"text\" class=\"form-control input\" id=\"input-manager-name\" aria-describedby=\"emailHelp\" onkeyup=\"mayus(this);\" maxlength=\"6\"></div>";
-            container[0].insertAdjacentElement("afterbegin", firstColumn)
+            document.getElementById('input-manager-id').style.display = "block";
+            document.getElementById('input-manager-id').setAttribute('value','');
         }
         else {
+            document.getElementById('input-manager-id').style.display = "none";
             var row = document.getElementById("firstRow")
             container[0].removeChild(row);
+            document.getElementById('input-manager-id').setAttribute('value',tds('id-s-managers'));
         }
     })  
     

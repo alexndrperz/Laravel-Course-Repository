@@ -46,7 +46,7 @@
                         <div class="col-12">
                             <div class="mb-3" id="div-input-location">
                                 <label for="" class="form-label">Ubicacion</label>
-                                <input type="text" class="form-control" id="input-name" aria-describedby="emailHelp" maxlength="50" name="location_companie">
+                                <input type="text" class="form-control input" id="input-name" aria-describedby="emailHelp" maxlength="50" name="location_companie">
                             </div>
                         </div>
                     </div>

@@ -23,6 +23,11 @@ Route::get('/managers_view', function() {
 })->name('managers');
 
 Route::post('/posts/companies', function(Request $request){
+    $request->validate([
+        'id_companie' => 'required',
+        'nombre_companie' => 'required'
+    ]);
+
     $id = $request->input('id_companie');
     $name = $request->input('nombre_companie');
     $phone = $request->input('telefono_companie');
@@ -33,11 +38,18 @@ Route::post('/posts/companies', function(Request $request){
 })->name('post.companies');
 
 Route::post('/posts/managers', function(Request $request){
+    $request->validate([
+        'id_managers' => 'required',
+        'nombre_managers' => 'required',
+        'lastName_managers' => 'required'
+    ]);
+
     $id = $request->input('id_managers');
     $name = $request->input('nombre_managers');
+    $lastName = $request->input('lastName_managers');
     $phone = $request->input('telefono_managers');
     $location = $request->input('location_managers');
     $email = $request->input('email_managers');
-    $result = $id."//".$name."//".$phone."//".$email."//".$location;
+    $result = $id."//".$name."//".$lastName."//".$phone."//".$email."//".$location;
     return redirect()->back()->with('success',$result);
 })->name('post.managers');
