@@ -38,13 +38,13 @@
                         <div class="col-6">
                             <div class="mb-3" id="div-input-phone">
                                 <label for="" class="form-label">Telefono</label>
-                                <input type="phone" class="form-control input" id="input-name" aria-describedby="emailHelp" maxlength="19" name="telefono_companie" value=" {{request()->routeIs('stores') ? old('telefono_companie') : old('telefono_managers')}}">
+                                <input type="phone" class="form-control input" id="input-name" aria-describedby="emailHelp" maxlength="19" name="telefono_companie" value=" {{request()->routeIs('get.companies') ? old('telefono_companie') : old('telefono_managers')}}">
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="mb-3" id="div-input-email">
                                 <label for="" class="form-label">Correo</label>
-                                <input type="email" class="form-control input" id="input-name" aria-describedby="emailHelp" maxlength="20" name="email_companie" value=" {{request()->routeIs('stores') ? old('email_companie') : old('email_managers')}}">
+                                <input type="email" class="form-control input" id="input-name" aria-describedby="emailHelp" maxlength="20" name="email_companie" value=" {{request()->routeIs('get.companies') ? old('email_companie') : old('email_managers')}}">
                             </div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                         <div class="col-12">
                             <div class="mb-3" id="div-input-location">
                                 <label for="" class="form-label">Ubicacion</label>
-                                <input type="text" class="form-control input" id="input-name" aria-describedby="emailHelp" maxlength="50" name="location_companie" value=" {{request()->routeIs('stores') ? old('location_companie') : old('location_managers')}}">
+                                <input type="text" class="form-control input" id="input-name" aria-describedby="emailHelp" maxlength="50" name="location_companie" value=" {{request()->routeIs('get.companies') ? old('location_companie') : old('location_managers')}}">
                             </div>
                         </div>
                     </div>
